@@ -1,6 +1,12 @@
-name: Greeting Workflow
+name: Python CI
+
 on: [push]
 
 jobs:
-say-hello:
-runs-on: ubuntu-latest
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Python Test
+        run: python3 test1.py
